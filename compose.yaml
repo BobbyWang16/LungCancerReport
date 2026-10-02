@@ -19,6 +19,8 @@ services:
       start_period: 30s
       retries: 3
     read_only: true
+    mem_limit: 512m
+    memswap_limit: 512m
     tmpfs:
       - /tmp:size=128m,mode=1777
     cap_drop: [ALL]
