@@ -1,0 +1,40 @@
+'use strict';
+// Local SVG interaction; positions are display layout, never statistical distance.
+const LCGraph=(()=>{
+ const colors={PATH:'#52677b',CE:'#237da0',NCE:'#65aa9c',PET_CT:'#ae7d9d'};
+ const escape=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const centers={PATH:[565,345,180],CE:[190,255,130],NCE:[925,175,105],PET_CT:[925,470,125]};
+ function render(svg,nodes,edges,{label=n=>n.label_zh,onNode=()=>{},onEdge=()=>{},caseMode=false}={}){
+  svg.setAttribute('viewBox','0 0 1120 660');svg.setAttribute('xmlns','http://www.w3.org/2000/svg');svg.setAttribute('aria-label',caseMode?'Current report evidence network':'Cross-modal evidence network');
+  const positions=new Map(),lookup=new Map(nodes.map(n=>[n.id,n]));
+  for(const mod of Object.keys(centers)){
+   const group=nodes.filter(n=>n.modality===mod).sort((a,b)=>(b.priority?.joint_weight||0)-(a.priority?.joint_weight||0)||a.id.localeCompare(b.id));const [cx,cy,r]=centers[mod];
+   group.forEach((n,i)=>{const rings=group.length>24?2:1,inner= Math.ceil(group.length/2),ring=rings===2&&i>=inner?1:0,j=ring?i-inner:i,count=rings===2?(ring?group.length-inner:inner):group.length;const theta=-Math.PI/2+2*Math.PI*j/Math.max(1,count);const radius=rings===2?(ring?r:r*.63):r;positions.set(n.id,{x:cx+radius*Math.cos(theta),y:cy+radius*Math.sin(theta),r:7+24*Math.sqrt(n.priority?.joint_weight||0)});});
+  }
+  const path=e=>{const a=positions.get(e.source),b=positions.get(e.target);if(!a||!b)return '';return `M${a.x},${a.y} Q${(a.x+b.x)/2},${(a.y+b.y)/2-22} ${b.x},${b.y}`;};
+  let html='<rect width="1120" height="660" fill="#fcfdfd"/><g data-viewport>';
+  const shownCenters=Object.entries(centers).filter(([mod])=>!caseMode||nodes.some(n=>n.modality===mod));
+  if(caseMode&&shownCenters.length){const x0=Math.max(0,Math.min(...shownCenters.map(([, [x,y,r]])=>x-r-60))),y0=Math.max(0,Math.min(...shownCenters.map(([, [x,y,r]])=>y-r-60))),x1=Math.min(1120,Math.max(...shownCenters.map(([, [x,y,r]])=>x+r+60))),y1=Math.min(660,Math.max(...shownCenters.map(([, [x,y,r]])=>y+r+60)));svg.setAttribute('viewBox',`${x0} ${y0} ${x1-x0} ${y1-y0}`);}
+  for(const[mod,[x,y,r]]of shownCenters)html+=`<circle cx="${x}" cy="${y}" r="${r+34}" fill="${colors[mod]}" fill-opacity=".055"/><text x="${x}" y="${y}" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="${colors[mod]}">${mod.replace('_','-')}</text>`;
+  const valid=edges.filter(e=>positions.has(e.source)&&positions.has(e.target));
+  html+=valid.map(e=>{const missing=caseMode&&(!lookup.get(e.source)?.observed||!lookup.get(e.target)?.observed);return `<path data-edge="${escape(e.id)}" d="${path(e)}" fill="none" stroke="${colors[e.modality]||'#98a8b5'}" stroke-width="1.3" stroke-opacity="${missing ? .22 : .28}" ${missing?'stroke-dasharray="4 4"':''}><title>${escape(e.measure)}: ${Number(e.effect).toFixed(3)}; n=${e.n}; q=${e.q}</title></path>`;}).join('');
+  html+=nodes.map(n=>{const p=positions.get(n.id);if(!p)return '';const unresolved=caseMode&&!n.observed,color=colors[n.modality],weight=n.priority?.joint_weight;return `<g data-node="${escape(n.id)}" role="button" tabindex="0" aria-label="${escape(label(n))}" transform="translate(${p.x} ${p.y})" cursor="pointer"><circle r="${p.r}" fill="${unresolved||!caseMode&&weight==null?'#ffffff':color}" fill-opacity="${unresolved||weight==null?1:.87}" stroke="${color}" stroke-width="${unresolved?1.8:1.1}" ${unresolved?'stroke-dasharray="3 3"':''}/><title>${escape(n.modality+' · '+label(n))}${caseMode?' · '+escape(n.status):''}</title>${caseMode?`<text y="${p.r+15}" text-anchor="middle" font-family="Arial,Microsoft YaHei" font-size="12" fill="#577181" pointer-events="none">${escape(label(n).slice(0,15))}</text>`:''}</g>`;}).join('');html+='</g>';svg.innerHTML=html;
+  const vp=svg.querySelector('[data-viewport]');let scale=1,tx=0,ty=0,drag=null,moved=false;
+  const tip=document.createElementNS('http://www.w3.org/2000/svg','text');tip.setAttribute('data-hover-label','');tip.setAttribute('font-family','Arial,Microsoft YaHei');tip.setAttribute('font-size','16');tip.setAttribute('font-weight','700');tip.setAttribute('fill','#294a5b');tip.setAttribute('stroke','#fff');tip.setAttribute('stroke-width','5');tip.setAttribute('paint-order','stroke');tip.setAttribute('pointer-events','none');vp.appendChild(tip);
+  function nameTip(id){const p=positions.get(id),n=lookup.get(id);tip.textContent=n.modality.replace('_','-')+' · '+label(n);tip.setAttribute('x',Math.max(15,Math.min(730,p.x)));tip.setAttribute('y',Math.max(25,p.y-p.r-13));}
+  function transform(){vp.setAttribute('transform',`translate(${tx} ${ty}) scale(${scale})`);}
+  function point(e){return new DOMPoint(e.clientX,e.clientY).matrixTransform(svg.getScreenCTM().inverse());}
+  function highlight(id){const neighbors=new Set([id]);valid.filter(e=>e.source===id||e.target===id).forEach(e=>{neighbors.add(e.source);neighbors.add(e.target);});svg.querySelectorAll('[data-node]').forEach(el=>el.style.opacity=neighbors.has(el.dataset.node)?'1':'.18');svg.querySelectorAll('[data-edge]').forEach(el=>{const e=valid.find(x=>x.id===el.dataset.edge),hit=e.source===id||e.target===id;el.setAttribute('stroke-opacity',hit?'.85':'.06');el.setAttribute('stroke-width',hit?'2.2':'1.2');});}
+  function clear(){tip.textContent='';svg.querySelectorAll('[data-node]').forEach(el=>el.style.opacity='1');svg.querySelectorAll('[data-edge]').forEach(el=>{const edge=valid.find(e=>e.id===el.dataset.edge),missing=caseMode&&(!lookup.get(edge.source)?.observed||!lookup.get(edge.target)?.observed);el.setAttribute('stroke-opacity',missing?'.22':'.28');el.setAttribute('stroke-width','1.3');});}
+  svg.querySelectorAll('[data-node]').forEach(el=>{el.onpointerenter=el.onfocus=()=>{highlight(el.dataset.node);nameTip(el.dataset.node);};el.onblur=()=>clear();el.onpointerleave=()=>{if(!drag)clear();};el.onclick=()=>{if(!moved)onNode(lookup.get(el.dataset.node));};el.onkeydown=e=>{if(['Enter',' '].includes(e.key)){e.preventDefault();onNode(lookup.get(el.dataset.node));}};});
+  svg.querySelectorAll('[data-edge]').forEach(el=>el.onclick=()=>onEdge(valid.find(e=>e.id===el.dataset.edge)));
+  svg.onpointerdown=e=>{if(e.button!==0)return;const p=point(e),id=e.target.closest('[data-node]')?.dataset.node;drag={id,start:p,tx,ty,position:id?{...positions.get(id)}:null};moved=false;svg.setPointerCapture(e.pointerId);};
+  svg.onpointermove=e=>{if(!drag)return;const p=point(e),dx=p.x-drag.start.x,dy=p.y-drag.start.y;moved=Math.abs(dx)+Math.abs(dy)>4;if(drag.id){const old=drag.position,pos=positions.get(drag.id);pos.x=Math.max(20,Math.min(1100,old.x+dx/scale));pos.y=Math.max(20,Math.min(640,old.y+dy/scale));svg.querySelectorAll('[data-node]').forEach(el=>{if(el.dataset.node===drag.id)el.setAttribute('transform',`translate(${pos.x} ${pos.y})`);});svg.querySelectorAll('[data-edge]').forEach(el=>{const edge=valid.find(e=>e.id===el.dataset.edge);if(edge.source===drag.id||edge.target===drag.id)el.setAttribute('d',path(edge));});}else{tx=drag.tx+dx;ty=drag.ty+dy;transform();}};
+  svg.onpointerup=()=>{drag=null;setTimeout(()=>moved=false,0);};svg.onpointercancel=()=>{drag=null;};
+  function zoom(mult,p={x:560,y:330}){const old=scale;scale=Math.max(.55,Math.min(3,scale*mult));tx=p.x-(p.x-tx)*scale/old;ty=p.y-(p.y-ty)*scale/old;transform();}
+  svg.onwheel=e=>{if(!e.ctrlKey&&!e.metaKey)return;e.preventDefault();zoom(e.deltaY<0?1.1:1/1.1,point(e));};
+  return {zoomIn:()=>zoom(1.2),zoomOut:()=>zoom(1/1.2),reset:()=>{scale=1;tx=ty=0;transform();clear();},highlight,clear};
+ }
+ function downloadSVG(svg,name){const copy=svg.cloneNode(true);copy.setAttribute('xmlns','http://www.w3.org/2000/svg');copy.setAttribute('width','1120');copy.setAttribute('height','660');copy.querySelector('[data-hover-label]')?.remove();const url=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(copy)],{type:'image/svg+xml;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=name+'.svg';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+ return {render,downloadSVG,colors};
+})();

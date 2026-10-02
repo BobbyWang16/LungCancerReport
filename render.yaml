@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: lung-cancer-report
+    runtime: docker
+    plan: free
+    region: singapore
+    numInstances: 1
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /healthz
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: REQUIRE_LOGIN
+        value: "true"
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: INVITE_USERNAME
+        value: tongji
+      - key: INVITE_PASSWORD_HASH
+        sync: false
+      - key: PROVIDER_ALLOWED_HOSTS
+        value: api.deepseek.com
+      - key: API_TIMEOUT_SECONDS
+        value: "120"

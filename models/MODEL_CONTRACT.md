@@ -1,0 +1,1 @@
+CF_20260930名义病理字典必须与bundle.histology_codebook一致。Cox预处理/系数/基线风险来自当前完整重拟合，计算p=1-exp(-H0*exp(beta*z))。1/3/5年共享生存曲线。importance为群体描述，不参与公式。site_model为八标签条件部位排序，不是器官绝对风险。所有可服务类别与时间点以bundle内histology_support及horizons门控为准。旧24个月模型不再部署。

@@ -1,0 +1,1549 @@
+{
+  "CE.main_location_code": {
+    "kind": "category",
+    "options": {
+      "1": "右上",
+      "2": "右中",
+      "3": "右下",
+      "4": "左上",
+      "5": "左下",
+      "6": "右肺门",
+      "7": "左肺门"
+    }
+  },
+  "CE.density_code": {
+    "kind": "category",
+    "options": {
+      "1": "纯磨玻璃",
+      "2": "部分实性",
+      "3": "实性",
+      "4": "磨玻璃未注明纯/部分"
+    }
+  },
+  "CE.main_side": {
+    "kind": "category",
+    "options": {
+      "1": "右",
+      "2": "左"
+    }
+  },
+  "CE.main_lobe": {
+    "kind": "category",
+    "options": {
+      "1": "右上叶",
+      "2": "右中叶",
+      "3": "右下叶",
+      "4": "左上叶",
+      "5": "左下叶"
+    }
+  },
+  "CE.central_peripheral_code": {
+    "kind": "category",
+    "options": {
+      "1": "中央型",
+      "2": "周围型"
+    }
+  },
+  "CE.long_diameter_mm": {
+    "kind": "number",
+    "options": null
+  },
+  "CE.second_diameter_mm": {
+    "kind": "number",
+    "options": null
+  },
+  "CE.ill_defined_margin": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.lobulation": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.spiculation": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.bubble_lucency": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.cavitation": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.calcification": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.pleural_retraction": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.pleural_indentation": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.vascular_convergence": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.vascular_traversal": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.air_bronchogram": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.bronchial_stenosis": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.bronchial_obstruction": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.pleural_effusion": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.lobulation_grade": {
+    "kind": "category",
+    "options": {
+      "0": "明确无",
+      "1": "浅分叶",
+      "2": "深分叶",
+      "3": "有未分级"
+    }
+  },
+  "CE.spiculation_type": {
+    "kind": "category",
+    "options": {
+      "0": "明确无",
+      "1": "短细",
+      "2": "长粗",
+      "3": "混合",
+      "4": "有未分型"
+    }
+  },
+  "CE.calcification_pattern": {
+    "kind": "category",
+    "options": {
+      "0": "明确无",
+      "1": "点状",
+      "2": "粗大",
+      "3": "偏心",
+      "4": "弥漫",
+      "5": "混合",
+      "6": "有未分型"
+    }
+  },
+  "CE.cavity_wall_mm": {
+    "kind": "number",
+    "options": null
+  },
+  "CE.cavity_wall_irregular": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.radiologic_pleural_invasion": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.vascular_encasement": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.vascular_stenosis": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.vascular_cutoff": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.bronchial_cutoff": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.obstructive_atelectasis": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.obstructive_pneumonia": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.satellite_nodules": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.pleural_nodules": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.emphysema": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.fibrosis_interstitial": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.satellite_distribution": {
+    "kind": "category",
+    "options": {
+      "1": "同叶",
+      "2": "同侧异叶",
+      "3": "对侧",
+      "4": "多区域"
+    }
+  },
+  "CE.pleural_effusion_side": {
+    "kind": "category",
+    "options": {
+      "1": "右",
+      "2": "左",
+      "3": "双侧"
+    }
+  },
+  "CE.ln_n1_abnormal": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.ln_n2_abnormal": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.ln_n3_abnormal": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.main_location_code": {
+    "kind": "category",
+    "options": {
+      "1": "右上",
+      "2": "右中",
+      "3": "右下",
+      "4": "左上",
+      "5": "左下",
+      "6": "右肺门",
+      "7": "左肺门"
+    }
+  },
+  "NCE.density_code": {
+    "kind": "category",
+    "options": {
+      "1": "纯磨玻璃",
+      "2": "部分实性",
+      "3": "实性",
+      "4": "磨玻璃未注明纯/部分"
+    }
+  },
+  "NCE.main_side": {
+    "kind": "category",
+    "options": {
+      "1": "右",
+      "2": "左"
+    }
+  },
+  "NCE.main_lobe": {
+    "kind": "category",
+    "options": {
+      "1": "右上叶",
+      "2": "右中叶",
+      "3": "右下叶",
+      "4": "左上叶",
+      "5": "左下叶"
+    }
+  },
+  "NCE.central_peripheral_code": {
+    "kind": "category",
+    "options": {
+      "1": "中央型",
+      "2": "周围型"
+    }
+  },
+  "NCE.long_diameter_mm": {
+    "kind": "number",
+    "options": null
+  },
+  "NCE.second_diameter_mm": {
+    "kind": "number",
+    "options": null
+  },
+  "NCE.ill_defined_margin": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.lobulation": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.spiculation": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.bubble_lucency": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.cavitation": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.calcification": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.pleural_retraction": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.pleural_indentation": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.vascular_convergence": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.vascular_traversal": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.air_bronchogram": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.bronchial_stenosis": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.bronchial_obstruction": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.pleural_effusion": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.lobulation_grade": {
+    "kind": "category",
+    "options": {
+      "0": "明确无",
+      "1": "浅分叶",
+      "2": "深分叶",
+      "3": "有未分级"
+    }
+  },
+  "NCE.spiculation_type": {
+    "kind": "category",
+    "options": {
+      "0": "明确无",
+      "1": "短细",
+      "2": "长粗",
+      "3": "混合",
+      "4": "有未分型"
+    }
+  },
+  "NCE.calcification_pattern": {
+    "kind": "category",
+    "options": {
+      "0": "明确无",
+      "1": "点状",
+      "2": "粗大",
+      "3": "偏心",
+      "4": "弥漫",
+      "5": "混合",
+      "6": "有未分型"
+    }
+  },
+  "NCE.cavity_wall_mm": {
+    "kind": "number",
+    "options": null
+  },
+  "NCE.cavity_wall_irregular": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.radiologic_pleural_invasion": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.vascular_encasement": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.vascular_stenosis": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.vascular_cutoff": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.bronchial_cutoff": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.obstructive_atelectasis": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.obstructive_pneumonia": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.satellite_nodules": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.pleural_nodules": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.emphysema": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.fibrosis_interstitial": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.satellite_distribution": {
+    "kind": "category",
+    "options": {
+      "1": "同叶",
+      "2": "同侧异叶",
+      "3": "对侧",
+      "4": "多区域"
+    }
+  },
+  "NCE.pleural_effusion_side": {
+    "kind": "category",
+    "options": {
+      "1": "右",
+      "2": "左",
+      "3": "双侧"
+    }
+  },
+  "NCE.ln_n1_abnormal": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.ln_n2_abnormal": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "NCE.ln_n3_abnormal": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.main_location_code": {
+    "kind": "category",
+    "options": {
+      "1": "右上",
+      "2": "右中",
+      "3": "右下",
+      "4": "左上",
+      "5": "左下",
+      "6": "右肺门",
+      "7": "左肺门"
+    }
+  },
+  "PET_CT.density_code": {
+    "kind": "category",
+    "options": {
+      "1": "纯磨玻璃",
+      "2": "部分实性",
+      "3": "实性",
+      "4": "磨玻璃未注明纯/部分"
+    }
+  },
+  "PET_CT.main_side": {
+    "kind": "category",
+    "options": {
+      "1": "右",
+      "2": "左"
+    }
+  },
+  "PET_CT.main_lobe": {
+    "kind": "category",
+    "options": {
+      "1": "右上叶",
+      "2": "右中叶",
+      "3": "右下叶",
+      "4": "左上叶",
+      "5": "左下叶"
+    }
+  },
+  "PET_CT.central_peripheral_code": {
+    "kind": "category",
+    "options": {
+      "1": "中央型",
+      "2": "周围型"
+    }
+  },
+  "PET_CT.long_diameter_mm": {
+    "kind": "number",
+    "options": null
+  },
+  "PET_CT.second_diameter_mm": {
+    "kind": "number",
+    "options": null
+  },
+  "PET_CT.ill_defined_margin": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.lobulation": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.spiculation": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.bubble_lucency": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.cavitation": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.calcification": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.pleural_retraction": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.pleural_indentation": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.vascular_convergence": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.vascular_traversal": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.air_bronchogram": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.bronchial_stenosis": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.bronchial_obstruction": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.pleural_effusion": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.lobulation_grade": {
+    "kind": "category",
+    "options": {
+      "0": "明确无",
+      "1": "浅分叶",
+      "2": "深分叶",
+      "3": "有未分级"
+    }
+  },
+  "PET_CT.spiculation_type": {
+    "kind": "category",
+    "options": {
+      "0": "明确无",
+      "1": "短细",
+      "2": "长粗",
+      "3": "混合",
+      "4": "有未分型"
+    }
+  },
+  "PET_CT.calcification_pattern": {
+    "kind": "category",
+    "options": {
+      "0": "明确无",
+      "1": "点状",
+      "2": "粗大",
+      "3": "偏心",
+      "4": "弥漫",
+      "5": "混合",
+      "6": "有未分型"
+    }
+  },
+  "PET_CT.cavity_wall_mm": {
+    "kind": "number",
+    "options": null
+  },
+  "PET_CT.cavity_wall_irregular": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.radiologic_pleural_invasion": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.vascular_encasement": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.vascular_stenosis": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.vascular_cutoff": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.bronchial_cutoff": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.obstructive_atelectasis": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.obstructive_pneumonia": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.satellite_nodules": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.pleural_nodules": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.emphysema": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.fibrosis_interstitial": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.satellite_distribution": {
+    "kind": "category",
+    "options": {
+      "1": "同叶",
+      "2": "同侧异叶",
+      "3": "对侧",
+      "4": "多区域"
+    }
+  },
+  "PET_CT.pleural_effusion_side": {
+    "kind": "category",
+    "options": {
+      "1": "右",
+      "2": "左",
+      "3": "双侧"
+    }
+  },
+  "PET_CT.ln_n1_abnormal": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.ln_n2_abnormal": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.ln_n3_abnormal": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.enhancement_degree": {
+    "kind": "category",
+    "options": {
+      "0": "无或无明显强化",
+      "1": "轻度",
+      "2": "中度",
+      "3": "明显"
+    }
+  },
+  "CE.enhancement_homogeneous": {
+    "kind": "category",
+    "options": {
+      "0": "不均匀",
+      "1": "均匀"
+    }
+  },
+  "CE.attenuation_plain_hu": {
+    "kind": "number",
+    "options": null
+  },
+  "CE.attenuation_arterial_hu": {
+    "kind": "number",
+    "options": null
+  },
+  "CE.attenuation_venous_hu": {
+    "kind": "number",
+    "options": null
+  },
+  "CE.attenuation_delayed_hu": {
+    "kind": "number",
+    "options": null
+  },
+  "CE.enhancement_delta_hu": {
+    "kind": "number",
+    "options": null
+  },
+  "CE.nonenhancing_component": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.radiologic_necrosis": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.ring_enhancement": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.progressive_enhancement": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.irregular_enhancement": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.vascular_invasion": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.mediastinal_invasion": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "CE.chestwall_invasion": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.suvmax": {
+    "kind": "number",
+    "options": null
+  },
+  "PET_CT.ln_n1_fdg_abnormal": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.ln_n2_fdg_abnormal": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.ln_n3_fdg_abnormal": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.metabolic_heterogeneity": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.distant_bone_uptake": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.distant_liver_uptake": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.distant_adrenal_uptake": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.distant_brain_uptake": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PET_CT.distant_other_uptake": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.histology_code": {
+    "kind": "category",
+    "options": {
+      "1": "ACC",
+      "2": "ASC",
+      "3": "CARC",
+      "4": "LCLC",
+      "5": "LCNEC",
+      "6": "LELC",
+      "7": "LUAD",
+      "8": "LUAD-LCNEC",
+      "9": "LUAD-SCLC",
+      "10": "LUSC",
+      "11": "LUSC-SCLC",
+      "12": "MALT",
+      "13": "MEC",
+      "14": "NEC",
+      "15": "NSCLC(AS)",
+      "16": "NSCLC(CHC)",
+      "17": "NSCLC(EH)",
+      "18": "NSCLC(EHE)",
+      "19": "NSCLC(LCA)",
+      "20": "NSCLC(LUAD-CARC)",
+      "21": "NSCLC(LUAD-LCC)",
+      "22": "NSCLC(LUAD-LCC-CARC)",
+      "23": "NSCLC(LUAD-LUSC)",
+      "24": "NSCLC(LUAD-LUSC-LCNEC)",
+      "25": "NSCLC(LUAD-LUSC-SCLC)",
+      "26": "NSCLC(LUAD-SCLC-LCC)",
+      "27": "NSCLC(LUAD-SCLC-LCNEC)",
+      "28": "NSCLC(LUSC-LCC)",
+      "29": "NSCLC(LUSC-LCNEC)",
+      "30": "NSCLC(LUSC-SCLC-LCNEC)",
+      "31": "NSCLC(MMC)",
+      "32": "NSCLC(NET)",
+      "33": "NSCLC(OS)",
+      "34": "NSCLC(PEComa)",
+      "35": "NSCLC(PMT)",
+      "36": "NSCLC(SARCOMA)",
+      "37": "NSCLC(SCLC-LCC)",
+      "38": "NSCLC(SCLC-LCNEC)",
+      "39": "NSCLC(SS)",
+      "40": "NSCLC(UT)",
+      "41": "PSC",
+      "42": "SCLC",
+      "43": "NSCLC（LUAD-LCC）",
+      "44": "NSCLC（LUSC-LCC）",
+      "45": "NSCLC（SARCOMA）",
+      "46": "NSCLC（UT）",
+      "47": "NSCLC（SS）",
+      "48": "NSCLC（LUAD-SCLC-LCNEC）",
+      "49": "NSCLC（AS）",
+      "50": "NSCLC（LUAD-LUSC）",
+      "51": "NSCLC（LUAD-CARC）",
+      "52": "NSCLC（MMC）",
+      "53": "NSCLC（SCLC-LCC）",
+      "54": "NSCLC（LUAD-LUSC-SCLC）",
+      "55": "NSCLC（LUAD-SCLC-LCC）",
+      "56": "NSCLC（LUAD-LCC-CARC）",
+      "57": "NSCLC（PEComa）",
+      "58": "NSCLC（LUSC-SCLC-LCNEC）",
+      "59": "NSCLC（LUAD-LUSC-LCNEC）",
+      "60": "NSCLC（LUSC-LCNEC）",
+      "61": "NSCLC（CHC）",
+      "62": "NSCLC（OS）",
+      "63": "NSCLC（LCA）",
+      "64": "NSCLC（SCLC-LCNEC）",
+      "65": "NSCLC（NET）",
+      "66": "NSCLC（PMT）",
+      "67": "NSCLC（EH）",
+      "68": "NSCLC（EHE）"
+    }
+  },
+  "PATH.path_max_diameter_mm": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.grade_lower": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.grade_upper": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.STAS": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.pleural_PL_code": {
+    "kind": "category",
+    "options": {
+      "0": "PL0",
+      "1": "PL1",
+      "2": "PL2",
+      "3": "PL3"
+    }
+  },
+  "PATH.lymphovascular_invasion": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.perineural_invasion": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.necrosis_code": {
+    "kind": "category",
+    "options": {
+      "0": "未见",
+      "1": "少量",
+      "2": "大量"
+    }
+  },
+  "PATH.nodes_examined": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.nodes_positive": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.node_positive_ratio": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.margin_positive": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.residual_R_code": {
+    "kind": "category",
+    "options": {
+      "0": "R0",
+      "1": "R1",
+      "2": "R2"
+    }
+  },
+  "PATH.ki67_lower_pct": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.ki67_upper_pct": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.ki67_relation": {
+    "kind": "category",
+    "options": {
+      "0": "单值",
+      "1": "闭区间",
+      "2": "<",
+      "3": "<=",
+      "4": ">",
+      "5": ">="
+    }
+  },
+  "PATH.pT_code": {
+    "kind": "category",
+    "options": {
+      "1": "T0",
+      "2": "T1",
+      "3": "T1B",
+      "4": "T1a",
+      "5": "T1b",
+      "6": "T1c",
+      "7": "T1mi",
+      "8": "T2",
+      "9": "T2a",
+      "10": "T2b",
+      "11": "T3",
+      "12": "T4",
+      "13": "Tis",
+      "14": "ypT0",
+      "15": "ypT1a"
+    }
+  },
+  "PATH.pN_code": {
+    "kind": "category",
+    "options": {
+      "1": "N0",
+      "2": "N1",
+      "3": "N2",
+      "4": "N3",
+      "5": "ypN0"
+    }
+  },
+  "PATH.pM_code": {
+    "kind": "category",
+    "options": {
+      "1": "M0",
+      "2": "M1a",
+      "3": "M1b",
+      "4": "Mx"
+    }
+  },
+  "PATH.pStage_code": {
+    "kind": "category",
+    "options": {
+      "1": "IA1期",
+      "2": "IA2期",
+      "3": "IA3期",
+      "4": "IA期",
+      "5": "IB期",
+      "6": "IIA期",
+      "7": "IIB期",
+      "8": "IIIA期",
+      "9": "IIIB期",
+      "10": "IVA期",
+      "11": "IV期",
+      "12": "IIIA",
+      "13": "IIIB",
+      "14": "0",
+      "15": "IA1",
+      "16": "IIB",
+      "17": "IB",
+      "18": "IA2",
+      "19": "IA3",
+      "20": "IIA"
+    }
+  },
+  "PATH.invasion_status": {
+    "kind": "category",
+    "options": {
+      "0": "原位",
+      "1": "微浸润",
+      "2": "浸润"
+    }
+  },
+  "PATH.lepidic_mentioned": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.lepidic_pct": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.acinar_mentioned": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.acinar_pct": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.papillary_mentioned": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.papillary_pct": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.micropapillary_mentioned": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.micropapillary_pct": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.solid_mentioned": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.solid_pct": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.cribriform_mentioned": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.cribriform_pct": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.path_side": {
+    "kind": "category",
+    "options": {
+      "1": "右",
+      "2": "左"
+    }
+  },
+  "PATH.path_lobe": {
+    "kind": "category",
+    "options": {
+      "1": "右上叶",
+      "2": "右中叶",
+      "3": "右下叶",
+      "4": "左上叶",
+      "5": "左下叶"
+    }
+  },
+  "PATH.invasive_diameter_mm": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.predominant_pattern": {
+    "kind": "category",
+    "options": {
+      "1": "贴壁",
+      "2": "腺泡",
+      "3": "乳头",
+      "4": "微乳头",
+      "5": "实性",
+      "6": "筛状",
+      "7": "复杂腺体"
+    }
+  },
+  "PATH.complex_glandular_mentioned": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.complex_glandular_pct": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.iaslc_grade_reported": {
+    "kind": "category",
+    "options": {
+      "1": "IASLC 1",
+      "2": "IASLC 2",
+      "3": "IASLC 3"
+    }
+  },
+  "PATH.pleural_invasion": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.blood_vessel_invasion": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.lymphatic_invasion": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.necrosis_pct": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.positive_station_count": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.n1_positive_station_count": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.n2_positive_station_count": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.extranodal_extension": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.nodal_metastasis_mm": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.skip_n2": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.margin_bronchial_positive": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.margin_vascular_positive": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.margin_parenchymal_positive": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.margin_nearest_mm": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.margin_bronchial_distance_mm": {
+    "kind": "number",
+    "options": null
+  },
+  "PATH.path_chestwall_invasion": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.path_large_vessel_invasion": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  },
+  "PATH.path_bronchial_invasion": {
+    "kind": "binary",
+    "options": {
+      "0": "明确阴性",
+      "1": "明确阳性/异常"
+    }
+  }
+}

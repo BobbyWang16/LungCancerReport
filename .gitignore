@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+runtime/
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.log
+*.xlsx
+*.xls
+*.sqlite
+*.npz
+node_modules/
+.DS_Store
+Thumbs.db

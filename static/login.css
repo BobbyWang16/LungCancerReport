@@ -1,0 +1,12 @@
+.login-page{min-height:100dvh;display:grid;place-items:center;background:radial-gradient(ellipse at top left,#e2efed,transparent 55%),#f3f6f8}
+.login-shell{width:min(420px,calc(100vw - 36px));margin:32px 0;padding:36px;border:1px solid #d9e5e8;border-radius:24px;background:#fff;box-shadow:0 20px 70px #234e5d0d}
+.login-shell>.language-switch{display:flex;justify-content:flex-end;margin-bottom:28px}
+.login-shell>.brand-mark{margin-bottom:22px;width:48px;height:48px;font-size:24px}
+.login-shell h1{font-size:26px;margin:0 0 8px;letter-spacing:-.6px}
+.login-shell #login-subtitle{font-size:16px;color:#617784;margin:0 0 28px}
+.login-shell form{display:grid;gap:18px}
+.login-shell label{display:grid;gap:8px;font-size:14px;font-weight:600;color:#365362}
+.login-shell input{width:100%;font-size:17px;padding:13px 14px;border:1px solid #cddcdf;border-radius:10px}
+.login-shell .login-error{margin:0;color:#b33a3a;min-height:0;font-size:14px}
+.login-shell .login-error:empty{display:none}
+.login-shell .login-note{font-size:13px;line-height:1.6;color:#738795;text-align:center;margin:24px 0 0}
