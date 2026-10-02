@@ -22,7 +22,7 @@ if __name__=='__main__':
     password=getpass.getpass('Invitation password: ')
     if not password:raise SystemExit('A password is required.')
     content=(f'PUBLIC_DOMAIN={domain}\nAPP_PORT={args.port}\nALLOWED_HOSTS={domain},localhost,127.0.0.1\n'
-             f'INVITE_USERNAME=tongji\nINVITE_PASSWORD_HASH={password_hash(password)}\n'
+             f"INVITE_USERNAME=tongji\nINVITE_PASSWORD_HASH='{password_hash(password)}'\n"
              'PROVIDER_ALLOWED_HOSTS=api.deepseek.com\nAPI_TIMEOUT_SECONDS=120\n')
     fd=os.open(path,os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600)
     with os.fdopen(fd,'w',encoding='utf8') as f:f.write(content)
