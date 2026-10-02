@@ -12,7 +12,7 @@
 
 ## 从GitHub部署
 
-GitHub管理源码、自动测试和Docker镜像；Python后端部署到Render。GitHub Pages不支持此后端。
+GitHub管理源码、自动测试和Docker镜像；Python后端可以部署到已有服务器或Render。GitHub Pages不支持此后端。当前采用阿里云ECS与Nginx HTTPS。
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/BobbyWang16/LungCancerReport)
 
@@ -47,6 +47,18 @@ docker compose --env-file .env.production up -d --build
 ```
 
 后端端口仅绑定本机，单实例运行；病例和API密钥没有持久化卷。证书卷仅用于HTTPS证书。更新时先通过GitHub检查，再执行`git pull --ff-only`并重新运行相同的Compose命令。在线接口代理域名需要管理员加入`PROVIDER_ALLOWED_HOSTS`。
+
+若服务器无法连接Docker Hub，可以使用GitHub Actions已验证并发布的GHCR镜像。将`COMMIT`替换为对应成功构建的完整提交SHA，固定部署版本：
+
+```bash
+docker pull ghcr.io/bobbywang16/lungcancerreport:COMMIT
+docker tag ghcr.io/bobbywang16/lungcancerreport:COMMIT lungcancerreport:local
+docker compose --env-file .env.production up -d --no-build app
+```
+
+已有Nginx时，为工具新增独立的域名配置，保留其他网站；HTTP仅用于证书验证和跳转HTTPS。证书更新后应配置`nginx -t && systemctl reload nginx`续期钩子。上线后检查`/healthz`、未登录API的401响应、邀请登录与退出，以及示例的风险和证据图显示。
+
+也可使用Python 3.11及以上的独立虚拟环境运行，保留系统原有Python版本。将仓库放在`/opt/lungcancerreport`，安装依赖到`.venv`，创建不允许登录的`lungreport`系统用户后，将`deploy/lungcancerreport.service`安装到`/etc/systemd/system/`并启用。该服务仅监听`127.0.0.1:10000`，使用生产邀请配置，限制512 MiB内存并禁止写入应用目录。它与Compose后端是两种可选启动方式，同一端口只启动其中一种。
 
 ## 本机验证
 

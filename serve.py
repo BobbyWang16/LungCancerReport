@@ -8,6 +8,6 @@ if __name__ == '__main__':
         from app.auth import ACCESS
         if not ACCESS.enabled or not ACCESS.ready() or not ACCESS.secure_cookie:
             raise SystemExit('Invitation credentials and secure cookies must be configured before deployment.')
-    uvicorn.run('app.main:app', host='0.0.0.0' if cloud else '127.0.0.1',
+    uvicorn.run('app.main:app', host=os.getenv('LISTEN_HOST', '0.0.0.0' if cloud else '127.0.0.1'),
                 port=int(os.getenv('PORT', '10000' if cloud else '8770')),
                 workers=1, access_log=False, server_header=False)
