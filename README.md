@@ -12,7 +12,7 @@
 
 ## 从GitHub部署
 
-GitHub管理源码、自动测试和Docker镜像；Python后端可以部署到已有服务器或Render。GitHub Pages不支持此后端。当前采用阿里云ECS与Nginx HTTPS。
+GitHub管理源码、自动测试和Docker镜像；Python后端可以部署到已有服务器或Render。GitHub Pages不支持此后端。已有服务器示例支持阿里云ECS与Nginx HTTPS。
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/BobbyWang16/LungCancerReport)
 
@@ -57,6 +57,8 @@ docker compose --env-file .env.production up -d --no-build app
 ```
 
 已有Nginx时，为工具新增独立的域名配置，保留其他网站；HTTP仅用于证书验证和跳转HTTPS。证书更新后应配置`nginx -t && systemctl reload nginx`续期钩子。上线后检查`/healthz`、未登录API的401响应、邀请登录与退出，以及示例的风险和证据图显示。
+
+中国内地节点须先确认域名备案与接入状态。若阿里云公网返回备案拦截页，后台健康检查成功不表示网站已经上线；应先完成备案，再申请并启用HTTPS，最后验证公网邀请登录。
 
 也可使用Python 3.11及以上的独立虚拟环境运行，保留系统原有Python版本。将仓库放在`/opt/lungcancerreport`，安装依赖到`.venv`，创建不允许登录的`lungreport`系统用户后，将`deploy/lungcancerreport.service`安装到`/etc/systemd/system/`并启用。该服务仅监听`127.0.0.1:10000`，使用生产邀请配置，限制512 MiB内存并禁止写入应用目录。它与Compose后端是两种可选启动方式，同一端口只启动其中一种。
 
