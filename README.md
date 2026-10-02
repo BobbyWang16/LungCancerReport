@@ -22,6 +22,32 @@ GitHub管理源码、自动测试和Docker镜像；Python后端部署到Render�
 
 使用免费单实例方案。空闲后可能休眠，首次打开需等待；服务器重启会结束当前测试会话。不要增加实例或Uvicorn worker；内存会话需要单进程。若采用自有域名，在`ALLOWED_HOSTS`中加入该域名。不要在GitHub Actions日志或源码中粘贴Secret。
 
+## 已有服务器部署
+
+需要Docker Compose、已指向服务器的域名，以及可用的HTTPS入口。先检查服务器现有服务；已有Nginx或其他反向代理时，沿用它们。
+
+```bash
+git clone https://github.com/BobbyWang16/LungCancerReport.git
+cd LungCancerReport
+python3 scripts/server_setup.py --domain reports.your-domain.org
+```
+
+按提示输入内部测试密码，配置文件`.env.production`权限为600，禁止提交到GitHub。
+
+若服务器80/443端口空闲，可以启用内置Caddy自动申请HTTPS证书：
+
+```bash
+docker compose --env-file .env.production --profile https up -d --build
+```
+
+若已有HTTPS反向代理，仅启动后端，再将对应域名代理到`http://127.0.0.1:10000`：
+
+```bash
+docker compose --env-file .env.production up -d --build
+```
+
+后端端口仅绑定本机，单实例运行；病例和API密钥没有持久化卷。证书卷仅用于HTTPS证书。更新时先通过GitHub检查，再执行`git pull --ff-only`并重新运行相同的Compose命令。在线接口代理域名需要管理员加入`PROVIDER_ALLOWED_HOSTS`。
+
 ## 本机验证
 
 ```powershell

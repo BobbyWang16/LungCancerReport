@@ -1,0 +1,56 @@
+services:
+  app:
+    build: .
+    image: lungcancerreport:local
+    restart: unless-stopped
+    init: true
+    env_file: .env.production
+    environment:
+      APP_ENV: production
+      REQUIRE_LOGIN: "true"
+      COOKIE_SECURE: "true"
+      PORT: "10000"
+    ports:
+      - "127.0.0.1:${APP_PORT:-10000}:10000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:10000/healthz', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      start_period: 30s
+      retries: 3
+    read_only: true
+    tmpfs:
+      - /tmp:size=128m,mode=1777
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "2"
+  https:
+    image: caddy:2
+    profiles: [https]
+    restart: unless-stopped
+    environment:
+      PUBLIC_DOMAIN: ${PUBLIC_DOMAIN:?Set PUBLIC_DOMAIN in .env.production}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      app:
+        condition: service_healthy
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "2"
+volumes:
+  caddy_data:
+  caddy_config:
