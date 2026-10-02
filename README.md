@@ -62,6 +62,14 @@ docker compose --env-file .env.production up -d --no-build app
 
 也可使用Python 3.11及以上的独立虚拟环境运行，保留系统原有Python版本。将仓库放在`/opt/lungcancerreport`，安装依赖到`.venv`，创建不允许登录的`lungreport`系统用户后，将`deploy/lungcancerreport.service`安装到`/etc/systemd/system/`并启用。该服务仅监听`127.0.0.1:10000`，使用生产邀请配置，限制512 MiB内存并禁止写入应用目录。它与Compose后端是两种可选启动方式，同一端口只启动其中一种。
 
+### 独立 HTTP 测试端口
+
+站点负责人明确选择明文 HTTP 测试时，可以使用 `deploy/nginx-http-test.conf`，让已有网站继续使用 80 端口，工具使用 8080 端口。此配置要求 Nginx 1.19.3 或以上；应先检查 8080 是否空闲，并在后台 `ALLOWED_HOSTS` 中加入实际访问的服务器 IP。Nginx 保留带端口的 Host，保证登录请求的来源检查正确。
+
+此网关仅对 8080 入口移除会话 Cookie 的 Secure 属性，保留 HttpOnly、SameSite=Strict、服务器端邀请认证与会话清理。后台仍绑定本机 10000 端口，HTTPS 部署默认值保持不变。HTTP 会明文传输登录信息、接口密钥和上传内容，应由负责人在启用公网规则前明确确认；只使用合成测试报告。端口分流不能替代中国内地接入所需的备案。
+
+激活前先在回环地址验证 Nginx 配置、登录、模型及知识图谱，再新增独立的 8080 Nginx 配置和对应的 TCP 入方向规则。公网浏览器完成登录与退出验证后，才能将 `http://SERVER_IP:8080/` 报告为可用地址。
+
 ## 本机验证
 
 ```powershell
