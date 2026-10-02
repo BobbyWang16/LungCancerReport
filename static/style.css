@@ -16,5 +16,17 @@
 
 .report-review{margin:20px 0;padding:24px}.report-review p{line-height:1.65}.review-scope{border-left:3px solid #b88736;padding-left:14px}.review-highlights{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.report-review details{margin-top:12px}
 
+/* Keep the working surface focused on input, review and outcomes. */
+#report-count:empty,#char-count:empty{display:none}
+.page-heading h1{color:#223e45}.page-heading{margin-bottom:24px}
+.steps{margin-bottom:28px}.panel{border-radius:16px}
+.input-row label>span{color:#526b74;font-size:15px}
+.risk-description:empty{display:none}.risk-description{color:#546e77}
+.risk-panel .result-details{margin-top:24px}
+.case-priority-row button{font-size:16px;color:#335765}
+.case-priority-row strong{font-size:17px}.kg-case-grid h3{font-size:17px}
+.feature-panel .muted{color:#627b85}.feature-panel td{color:#48626a}
+.review-footer .check>span{font-size:16px}.report-review .review-highlights{margin-top:18px}
+
 /* Reading-first layout: concise outcomes, detail on demand. */
 .result-context{font-size:14px;color:var(--muted);margin:12px 0}.risk-description{font-size:15px;line-height:1.5}.risk-years .year-card{border-radius:14px;padding:23px 16px}.risk-years .year-card>strong{font-size:39px}.site-card{border-radius:12px}.review-metrics{display:flex;gap:50px;margin:16px 0 22px}.review-metrics>div{min-width:150px}.review-metrics strong{font-size:26px;display:block;color:var(--teal)}.review-metrics span{font-size:14px;color:var(--muted)}.review-meter{height:5px;background:#e4ece8;border-radius:5px;margin-top:10px}.review-meter i{display:block;height:100%;background:#78a89d;border-radius:5px}.review-alert{padding:12px 16px;background:#fff3e6;border-left:3px solid #c39c66;border-radius:6px}.review-highlights .button{font-size:14px;padding:10px 13px}.result-details summary,.feature-details summary,.review-footer summary{font-size:14px}.review-footer .compact-details{padding-top:10px;margin-top:10px}.feature-panel .panel-title p:empty{display:none}#settings-dialog .compact-details{font-size:14px}#settings-dialog p{line-height:1.6}#risk-section .sites-heading span:empty{display:none}@media(max-width:600px){.review-metrics{gap:22px}.review-metrics>div{min-width:0}.risk-years .year-card{padding:16px 9px}.risk-years .year-card>strong{font-size:30px}}

@@ -26,3 +26,55 @@
 .case-priority-row{display:grid;grid-template-columns:minmax(0,1fr) 48px 22px;gap:10px;align-items:center;margin:12px 0}.case-priority-row button{font-size:14px;text-align:left}.case-priority-row>a{font-size:18px;text-decoration:none}.case-priority-row strong{font-size:14px;color:#476c80;text-align:right}.case-priority-track{height:4px;background:#e4ecef;border-radius:4px;grid-column:1/3;overflow:hidden}.case-priority-track i{display:block;height:100%;background:#7aa9b7}
 .kg-case-grid{gap:26px}.kg-case-network{margin:14px 0}.kg-case-network svg{max-height:430px}.kg-case-grid h3{font-size:15px}.kg-table-sub{font-size:12px}.kg-main footer{font-size:13px}
 @media(max-width:750px){.evidence-summary{gap:16px;flex-wrap:wrap}.evidence-summary div{flex-direction:column;gap:3px}.kg-main .page-heading h1{font-size:25px}.kg-filters{gap:8px}.kg-filters select{min-width:110px;max-width:100%}.matrix-action-hint{margin-left:0}.kg-inspect .weight-metrics{flex-wrap:wrap}.kg-case-network svg{max-height:none}}
+
+/* Guided evidence workspace: priorities, connections, then source statistics. */
+.kg-main{max-width:1240px;color:#243e48;padding-bottom:32px}
+.kg-main .page-heading{margin-top:36px;margin-bottom:24px;align-items:center}
+.kg-main .page-heading h1{font-size:32px;margin:0}
+.kg-view-tabs{gap:12px;padding:0 0 20px;margin-bottom:24px;border-bottom:1px solid #dce6e9}
+.kg-view-tabs button{display:flex;align-items:center;gap:12px;font-size:17px;padding:14px 20px;border-radius:12px;color:#4d6874}
+.kg-view-tabs button.selected{background:#e0efed;color:#166559}
+.kg-step{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#edf2f3;font-size:14px}
+.selected .kg-step{background:#267c70;color:#fff}
+.kg-association-tools{display:flex;justify-content:flex-end;margin:-4px 0 18px}
+.kg-segment{display:inline-flex;gap:4px;padding:5px;border-radius:12px;background:#edf2f3;flex-wrap:wrap}
+.kg-segment button{background:transparent;border:0;border-radius:9px;padding:10px 18px;font-size:16px;color:#536c77;cursor:pointer}
+.kg-segment button.selected{background:#fff;color:#1c665d;box-shadow:0 2px 7px #183c4210;font-weight:600}
+.kg-main .panel{padding:28px;border-color:#e0e8ea;border-radius:18px}
+.kg-main h2{font-size:23px;color:#253f49}.kg-main h3{color:#253f49}
+.kg-priority-modes{margin:0 0 24px}
+.kg-priority-ranking{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.kg-ranking-card{border:1px solid #e1e9ec;background:#fcfdfd;border-radius:14px;padding:22px}
+.kg-ranking-card h3{display:flex;align-items:center;gap:10px;font-size:18px;margin:0 0 18px;font-weight:650}
+.kg-ranking-card h3>i{width:10px;height:10px;background:var(--report-color);border-radius:50%;flex-shrink:0}
+.kg-priority-row{display:grid;grid-template-columns:25px minmax(0,1fr) 65px;gap:12px;align-items:center;width:100%;padding:13px 0;border:0;background:none;text-align:left;color:#334f5c;font:inherit;cursor:pointer;border-bottom:1px solid #edf1f2}
+.kg-priority-row:last-child{border-bottom:0}.kg-priority-row:hover .kg-rank-label{color:#117a70}
+.kg-rank-number{font-size:15px;color:#889ba5}.kg-rank-label{font-size:16px;line-height:1.45}
+.kg-priority-row>strong{font-size:18px;font-weight:600;text-align:right;font-variant-numeric:tabular-nums;color:#294d5d}
+.kg-rank-track{display:block;height:5px;border-radius:5px;background:#e7eef0;margin-top:8px;overflow:hidden}
+.kg-rank-track>i{display:block;height:100%;border-radius:5px}
+.kg-rank-more{margin-top:16px}.kg-rank-more summary{font-size:15px;color:#587582;cursor:pointer}
+.kg-no-weight{font-size:16px;color:#71848e;margin:32px 0}
+.kg-main .compact-details{padding-top:20px;margin-top:22px}
+.kg-main summary{font-size:16px;cursor:pointer;color:#4e6874}
+.kg-main details p{font-size:15px;line-height:1.8;color:#59717e}
+.kg-weight-control{margin-top:20px;background:#f1f6f6;font-size:16px}
+.kg-inspect{font-size:16px;padding:22px}.kg-inspect:empty{display:none}
+.kg-display-options{position:relative;margin-left:auto}.kg-display-options>div{padding:20px;border:1px solid #dfe8eb;border-radius:12px;background:#fff;position:absolute;right:0;top:34px;width:340px;z-index:5;box-shadow:0 10px 35px #1b414717}
+.kg-display-options select{width:100%;max-width:none}.kg-display-options .check{margin:18px 0;font-size:16px}
+.kg-display-options p{margin-bottom:0}.kg-graph-scroll svg{max-height:660px}
+.kg-stats{margin-top:24px;margin-bottom:22px}.kg-stat span{font-size:15px}
+.kg-main .kg-methods{background:#f7fafb;margin-top:26px}
+.kg-main .kg-methods>summary{color:#53717e;font-weight:500}
+.kg-main .kg-eyebrow{font-size:14px;letter-spacing:0;margin-bottom:8px}
+.kg-node{font-size:16px}.kg-node span{font-size:14px}
+.kg-main .kg-focus .kg-quiet{font-size:15px}.kg-priority small{font-size:14px}
+.kg-sidebar{top:16px}.kg-sidebar>label{font-size:17px}
+.kg-input-row select{font-size:15px}.kg-nodes{max-height:530px}
+.kg-network-panel .table-scroll{margin-top:20px}.kg-table-sub{font-size:14px}
+.kg-main table{font-size:15px}.kg-main td,.kg-main th{color:#48626f}
+.kg-table-button{color:#236f80}.kg-main .kg-evidence-grid div{font-size:16px}
+.kg-main footer{font-size:14px;padding-top:24px;color:#6e828c}
+.kg-view-tabs button:focus-visible,.kg-segment button:focus-visible,.kg-priority-row:focus-visible,.kg-node:focus-visible{outline:3px solid #4b9d91;outline-offset:3px}
+@media(max-width:750px){.kg-main .page-heading{margin-top:24px}.kg-main .page-heading h1{font-size:27px}.kg-view-tabs{gap:4px}.kg-view-tabs button{gap:8px;padding:12px 10px;font-size:15px}.kg-step{width:23px;height:23px}.kg-main .panel{padding:20px}.kg-priority-ranking{grid-template-columns:1fr;gap:16px}.kg-ranking-card{padding:18px}.kg-association-tools{justify-content:flex-start}.kg-segment button{padding:10px 12px;font-size:15px}.kg-display-options>div{width:280px}.kg-priority-row{gap:8px}.kg-priority-row>strong{font-size:17px}.kg-main .kg-stats{grid-template-columns:1fr 1fr}}
+@media print{.kg-view-tabs,.kg-association-tools,.kg-priority-modes,.kg-display-options,.kg-rank-more{display:none}.kg-priority-ranking{grid-template-columns:1fr 1fr}.kg-ranking-card{break-inside:avoid}}

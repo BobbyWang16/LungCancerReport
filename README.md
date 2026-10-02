@@ -4,6 +4,8 @@
 
 保留文本、PDF、PNG/JPG输入、CE/NCE/PET-CT与病理特征编码、人工核对、中英文切换、自动研究模型选择，以及支持人群内的1/3/5年风险和三个复发部位排序。复发部位是探索性排序；研究风险与验证边界在界面中显示，未获得支持的人群或时间点不生成概率。
 
+报告证据页按“报告重点 → 跨模态关联 → 统计证据”浏览。默认展示各报告内的特征权重排名，可分别查看综合、关联与复发预测维度；关联栏目提供关系图和亚组热图。点击排名或热图可查阅对应统计与来源。覆盖率卡片及重复操作提示已移除，双维度对照、方法、编码和溯源按需展开。权重仍来自冻结的全队列分析；亚组筛选仅改变对应的关联证据。
+
 ## 邀请测试
 
 整个应用和API均需服务器端登录，未开放注册。测试账号由`INVITE_USERNAME`配置，口令只以PBKDF2哈希保存在托管平台Secret中。源码没有测试密码、患者记录或API密钥。
@@ -86,6 +88,7 @@ python serve.py
 python -m pytest -q
 node tests/test_evidence_matrix.cjs
 node tests/test_result_presentation.cjs
+node tests/test_priority_selection.cjs
 python scripts/check_publish.py
 ```
 

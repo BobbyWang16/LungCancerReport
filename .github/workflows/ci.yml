@@ -22,6 +22,7 @@ jobs:
       - run: python -m pytest -q
       - run: node tests/test_evidence_matrix.cjs
       - run: node tests/test_result_presentation.cjs
+      - run: node tests/test_priority_selection.cjs
       - run: python scripts/check_publish.py
   container:
     needs: verify
